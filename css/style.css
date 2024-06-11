@@ -38,7 +38,7 @@ body {
 	color: #000
 }
 
-.social-link img {
+.instagram-link img {
 	width: 20px;
 	height: 20px;
 }
@@ -114,7 +114,7 @@ body {
 }
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
 	color: #fff;
-	background-color: #BEB45A;
+	background-color: #756a03;
 	border-radius:0 ;
 }
 .nav-pills .nav-link {
@@ -220,7 +220,7 @@ body {
 }
 .picture.right::before {
 	content: ' ';
-	background-color: #BEB45A;
+	background-color: #756a03;
 	width: 374px;
 	height: 329px;
 	position: absolute;
@@ -257,8 +257,12 @@ form textarea {
 	margin-bottom: 20px;
 }
 input[type="submit"] {
-	background-color: #BEB45A;
-	padding: .5em 1em
+	background-color: #756a03;
+	padding: .5em 1em;
+}
+
+#about #about-me h3.about-me__introduction {
+	font-size: 1rem;
 }
 
 @media all and (max-width: 1180px) {
@@ -272,9 +276,10 @@ input[type="submit"] {
 		margin-top: 0;
 		margin-bottom: 1em;
 	}
-	#about-me h6, #about-me p {
+	#about-me h3, #about-me p {
 		width: 100%;
 	}
+
 }
 
 @media all and (max-width: 1000px) {
@@ -298,6 +303,7 @@ input[type="submit"] {
 		text-align: center;
 		margin-top: 1em;
 	}
+
 	#services .container {
 		flex-direction: column;
 	}
