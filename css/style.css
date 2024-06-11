@@ -54,6 +54,7 @@ body {
 	padding-inline: 100px;
 	padding-block: 100px;
 	position: relative;
+	scroll-margin-top: 99px;
 }
 
 .picture.left::before {
@@ -97,7 +98,7 @@ body {
 }
 
 #gallery {
-	/*	min-height: 100vh; */
+	scroll-margin-top: 99px;
 }
 
 .gallery-item {
@@ -176,6 +177,7 @@ body {
 	margin: auto;
 	background-color: #A8D5D8 ;
 	position: relative;
+	scroll-margin-top: 99px;
 }
 #services .container::before{
 	content: ' ';
@@ -241,8 +243,9 @@ form {
 
 form input {
 	width: 100%;
+	color: #FFF;
 	background-color: transparent;
-	border: solid 1px;
+	border: solid 1px #000;
 	height: 2.5em;
 	margin-bottom: 20px;
 }
