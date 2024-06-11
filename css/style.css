@@ -40,6 +40,12 @@ body {
 
 .social-link img {
 	width: 20px;
+	height: 20px;
+}
+
+.w-100 {
+	width: 1905px;
+	height: 881px;
 }
 
 #about {
@@ -68,8 +74,8 @@ body {
 }
 
 .picture img {
-	width: 100%;
-
+	width: 555px;
+	height: 553px;
 }
 #about-me {
 	flex: 2
@@ -92,6 +98,11 @@ body {
 
 #gallery {
 	/*	min-height: 100vh; */
+}
+
+.gallery-item {
+	width: 440;
+	height: 440;
 }
 
 .title{
