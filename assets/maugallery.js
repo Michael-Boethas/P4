@@ -1,6 +1,6 @@
 (function($) {
-  $.fn.mauGallery = function(options) {
-    var options = $.extend($.fn.mauGallery.defaults, options);
+  $.fn.mauGallery = function(passedOptions) {                           // Paramètre renommé par souci de clarté
+    var options = $.extend($.fn.mauGallery.defaults, passedOptions);    // options contient $.fn.mauGallery.defaults fusionné avec et écrasé par passedOptions
     var tagsCollection = [];
     return this.each(function() {
       $.fn.mauGallery.methods.createRowWrapper($(this));
@@ -154,23 +154,23 @@
         }
       });
       next =
-        imagesCollection[index] ||
+        imagesCollection[index - 1] ||
         imagesCollection[imagesCollection.length - 1];
       $(".lightboxImage").attr("src", $(next).attr("src"));
     },
     nextImage() {
       let activeImage = null;
-      $("img.gallery-item").each(function() {
+      $("img.gallery-item").each(function() {                           
         if ($(this).attr("src") === $(".lightboxImage").attr("src")) {
-          activeImage = $(this);
+          activeImage = $(this);                                         // Image actuelle de la lightbox
         }
       });
-      let activeTag = $(".tags-bar span.active-tag").data("images-toggle");
+      let activeTag = $(".tags-bar span.active-tag").data("images-toggle");  // Filtre actuellement selectionné
       let imagesCollection = [];
       if (activeTag === "all") {
         $(".item-column").each(function() {
           if ($(this).children("img").length) {
-            imagesCollection.push($(this).children("img"));
+            imagesCollection.push($(this).children("img"));             // Toutes les images
           }
         });
       } else {
@@ -180,43 +180,43 @@
               .children("img")
               .data("gallery-tag") === activeTag
           ) {
-            imagesCollection.push($(this).children("img"));
+            imagesCollection.push($(this).children("img"));           // Images correspondant au filtre 
           }
         });
       }
       let index = 0,
         next = null;
 
-      $(imagesCollection).each(function(i) {
+      $(imagesCollection).each(function(i) {                          // i représente l'index d'itération actuelle (jQuery .each)
         if ($(activeImage).attr("src") === $(this).attr("src")) {
-          index = i;
+          index = i;              
         }
       });
-      next = imagesCollection[index] || imagesCollection[0];
+      next = imagesCollection[index + 1] || imagesCollection[0];    // index + 1 pour l'image suivante ou imageCollection[0] pour revenir à la première image
       $(".lightboxImage").attr("src", $(next).attr("src"));
     },
     createLightBox(gallery, lightboxId, navigation) {
-      gallery.append(`<div class="modal fade" id="${
-        lightboxId ? lightboxId : "galleryLightbox"
-      }" tabindex="-1" role="dialog" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-body">
-                            ${
-                              navigation
-                                ? '<div class="mg-prev" style="cursor:pointer;position:absolute;top:50%;left:-15px;background:white;"><</div>'
-                                : '<span style="display:none;" />'
-                            }
-                            <img class="lightboxImage img-fluid" alt="Contenu de l'image affichée dans la modale au clique"/>
-                            ${
-                              navigation
-                                ? '<div class="mg-next" style="cursor:pointer;position:absolute;top:50%;right:-15px;background:white;}">></div>'
-                                : '<span style="display:none;" />'
-                            }
-                        </div>
-                    </div>
-                </div>
-            </div>`);
+      gallery.append(`
+        <div class="modal fade" id="${lightboxId ? lightboxId : "galleryLightbox"}" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                ${
+                  navigation
+                    ? `<div class="mg-prev" style="cursor:pointer;position:absolute;top:50%;left:-15px;background:white;"><</div>`
+                    : `<span style="display:none;" />`
+                }
+                <img class="lightboxImage img-fluid" alt="Contenu de l'image affichée dans la modale au clique"/>
+                ${
+                  navigation
+                    ? `<div class="mg-next" style="cursor:pointer;position:absolute;top:50%;right:-15px;background:white;">></div>`
+                    : `<span style="display:none;" />`
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      `);
     },
     showItemTags(gallery, position, tags) {
       var tagItems =
@@ -240,7 +240,7 @@
         return;
       }
       $(".active-tag").removeClass("active active-tag");
-      $(this).addClass("active-tag");
+      $(this).addClass("active active-tag");              // Ajout de la classe "active" pour le bug d'affichage sur les boutons catégories
 
       var tag = $(this).data("images-toggle");
 
