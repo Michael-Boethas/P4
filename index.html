@@ -4,21 +4,38 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer">
-	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="./css/style.min.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;1,300;1,400;1,800&display=swap" rel="stylesheet">
 	<link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon">
-	<meta name="description" content="Découvrez l'univers de Nina Carducci, photographe professionnelle en Île-de-France. Parcourez son portfolio où chaque instant est saisi avec émotion et talent. Des concerts aux mariages, laissez-vous transporter par son regard artistique. Explorez ses services sur mesure et offrez-vous des souvenirs intemporels. Contactez Nina dès aujourd'hui pour donner vie à vos moments précieux.">
-	<title>Nina Carducci - Photographe professionnelle en Île-de-France</title>
+	<meta name="description" content="Découvrez l'univers de Nina Carducci, photographe à Bordeaux et en Île-de-France. Parcourez son portfolio et contactez-la pour des souvenirs intemporels.">
+	<title>Nina Carducci - Photographe professionnelle à Bordeaux et en Île-de-France</title>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30WpbsGTqbIiAwxTsbe76DErLq5EDQ==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
 	<script src="./js/maugallery.js" defer></script>
 	<script src="./js/scripts.js" defer></script>
+	<script type="application/ld+json">
+		{
+		  "@context": "https://schema.org",
+		  "@type": "LocalBusiness",
+		  "name": "Nina Carducci",
+		  "address": {
+			"@type": "PostalAddress",
+			"streetAddress": "68 avenue Alsace-Lorraine",
+			"addressLocality": "Bordeaux",
+			"postalCode": "33200"
+		  },
+		  "telephone": "+33556677889",
+		  "openingHours": [
+			"Mo-Fr 10:00-19:00"
+		  ]
+		}
+	</script>	
 </head>
 <body>
 <main>
-	<header class="top-header">
+	<header class="top-header" role="banner">
 		<h1 class="name">Nina Carducci</h1>
 		<nav class="nav">   
 			<ul>
@@ -26,7 +43,8 @@
 				<li><a href="#gallery">Galerie</a></li>
 				<li><a href="#services">Service</a></li>
 				<li><a href="#contact">Contact</a></li>
-				<li><a class="instagram-link" href="https://www.instagram.com/ninacarducci.photo/?hl=fr" target="_blank"><img src="assets/images/instagram-logo.webp" alt="Logo instagram"></a></li>
+				<li><a class="instagram-link" href="https://www.instagram.com/ninacarducci.photo/?hl=fr" target="_blank"><img src="assets/images/instagram-logo.webp" alt="Logo Instagram"></a></li>
+				<li><a class="facebook-link" href="https://www.facebook.com/people/Nina-Carducci/pfbid0BHDvzDrHjpq6EtMJisMi1DBDrrtyt6wsiXd2zKkTcZZyXiUTbn7t2i13PRCe31mUl/" target="_blank"><img src="assets/images/facebook-logo.webp" alt="Logo Facebook"></a></li>
 			</ul>
 		</nav>
 	</header>
@@ -48,11 +66,11 @@
 					<img src="./assets/images/slider/wedding-edward-cisneros.webp" class="d-block w-100" alt="Homme embrassant la mariée" title="wedding-edward-cisneros">
 				</div>
 			</div>
-			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev" aria-label="Previous">
 				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 				<span class="visually-hidden">Previous</span>
 			</button>
-			<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+			<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next" aria-label="Next">
 				<span class="carousel-control-next-icon" aria-hidden="true"></span>
 				<span class="visually-hidden">Next</span>
 			</button>
@@ -142,7 +160,7 @@
 			<div class="form-container">
 				<h2>Une question ? Une demande de devis ?</h2>
 				<p> N’hésitez pas à m’écrire ! Je vous répondrais en moins de 24 heures</p>
-				<form action="#" method="post">
+				<form>
 					<label for="nom">Nom</label>
 					<input type="text" name="nom" id="nom">
 					
@@ -161,8 +179,13 @@
 		</div>
 	</section>
 </main>
-<footer>
-	<p>© 2024 Nina Carducci. Tous droits réservés.</p>
+<footer role="contentinfo">
+    <p>© 2024 Nina Carducci. Tous droits réservés.</p>
+    <address>
+        <p>Mon adresse : 68 avenue Alsace-Lorraine, 33200 Bordeaux.</p>
+        <p>Mon numéro de téléphone : <a href="tel:+33556677889">05 56 67 78 89</a></p>
+        <p>Je réponds au téléphone du lundi au vendredi de 10 h à 19 h.</p>
+    </address>
 </footer>
 </body>
 </html>
