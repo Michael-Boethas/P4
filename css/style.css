@@ -59,6 +59,10 @@ html {
     width: 1905px;
     height: 881px;
 }
+.carousel-control-next:focus,
+.carousel-control-prev:focus {
+    border: 2px solid;
+}
 #about {
     display: flex;
     background-color: #F6D2B8;
@@ -395,7 +399,18 @@ footer p {
         align-items: center;
     }
     .social-links {
-        gap: 75px;
+        gap: 80px;
+        padding: 20px;
+    }
+    .instagram-link img {
+        width: 25px;
+        height: 25px;
+        margin: 8px;
+    }
+    .facebook-link img {
+        width: 30px;
+        height: 30px;
+        margin: 5px;
     }
     .picture.left::before,
     .picture.right::before {
@@ -404,6 +419,9 @@ footer p {
     .picture img {
         width: 80%;
         height: auto;
+    }
+    .title {
+        padding-bottom: 0;
     }
     #services .container {
         align-items: center;
