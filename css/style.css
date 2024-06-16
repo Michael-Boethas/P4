@@ -26,42 +26,39 @@ html {
     padding: 30px 5%;
     align-items: center;
 }
-
 .top-header .name {
     font-size: 26px;
 }
-
 .nav ul {
     display: flex;
     list-style-type: none;
     font-size: 14px;
     margin-bottom: 0;
 }
-
 .nav li {
     padding-inline: 10px;
 }
-
 .nav a {
     text-decoration: none;
     color: #000;
 }
-
+.social-links {
+    display: flex;
+    gap: 20px;
+    padding-inline: 20px;
+}
 .instagram-link img {
     width: 20px;
     height: 20px;
 }
-
 .facebook-link img {
     width: 25px;
     height: 25px;
 }
-
 .w-100 {
-    max-width: 1905px;
-    max-height: 881px;
+    width: 1905px;
+    height: 881px;
 }
-
 #about {
     display: flex;
     background-color: #F6D2B8;
@@ -69,7 +66,6 @@ html {
     position: relative;
     scroll-margin-top: 99px;
 }
-
 .picture.left::before {
     content: ' ';
     background-color: #E5975F;
@@ -80,13 +76,11 @@ html {
     left: 0;
     z-index: -1;
 }
-
 .picture {
     flex: 1;
     margin: 0 20px;
     z-index: 0;
 }
-
 .picture img {
     width: 555px;
     height: 553px;
@@ -109,16 +103,13 @@ html {
     width: 80%;
     font-size: 14px;
 }
-
 #gallery {
     scroll-margin-top: 99px;
 }
-
 .gallery-item {
     width: 440px;
     height: 440px;
 }
-
 .title {
     text-align: center;
     padding-block: 2em;
@@ -139,7 +130,6 @@ html {
 .gallery-item:hover {
     cursor: pointer;
 }
-
 .item-column {
     position: relative;
     margin-bottom: 0 !important;
@@ -149,7 +139,6 @@ html {
     content: "";
     display: block;
     padding-bottom: 100%;
-
 }
 .gallery-item {
     position: absolute;
@@ -168,7 +157,6 @@ html {
     display: flex;
     font-size: 24px;
 }
-
 .quote {
     font-family: 'Spectral';
     font-style: italic;
@@ -180,14 +168,12 @@ html {
     font-family: Spectral;
     font-style: italic;
     font-weight: 300;
-
 }
 .quote__author {
     font-family: Spectral;
     font-weight: 800;
     font-size: 22px;
 }
-
 #services {
     margin: auto;
     background-color: #A8D5D8;
@@ -204,14 +190,11 @@ html {
     left: 0;
     z-index: 0;
 }
-
 #services .container {
     justify-content: space-between;
     display: flex;
     padding: 2em 0;
-
 }
-
 .service {
     background-color: white;
     max-width: 390px;
@@ -223,7 +206,6 @@ html {
     justify-content: space-between;
     z-index: 1;
 }
-
 #contact {
     margin: auto;
     background-color: #D8D3A8;
@@ -231,7 +213,6 @@ html {
     padding-inline: 100px;
     padding-block: 100px;
 }
-
 #contact .container {
     display: flex;
 }
@@ -247,7 +228,6 @@ html {
 }
 .form-container {
     flex: 2;
-
 }
 form {
     display: flex;
@@ -255,7 +235,6 @@ form {
     width: 70%;
     align-items: flex-start;
 }
-
 form input {
     width: 100%;
     color: #FFF;
@@ -264,7 +243,6 @@ form input {
     height: 2.5em;
     margin-bottom: 20px;
 }
-
 form textarea {
     width: 100%;
     background-color: #FFF;
@@ -278,11 +256,9 @@ input[type="submit"] {
     background-color: #756a03;
     padding: 0.5em 1em;
 }
-
 #about #about-me h3.about-me__introduction {
     font-size: 1rem;
 }
-
 footer {
     display: flex;
     justify-content: space-between;
@@ -291,7 +267,6 @@ footer {
     color: #FFF;
     padding: 0 30px;
 }
-
 footer address {
     display: flex;
     flex-flow: column;
@@ -300,7 +275,6 @@ footer address {
     padding: 10px;
     border: 2px solid #808080;
 }
-
 footer p {
     margin: 0;
     line-height: 20px;
@@ -321,7 +295,6 @@ footer p {
     #about-me p {
         width: 100%;
     }
-
     .top-header {
         position: unset;
     }
@@ -332,7 +305,6 @@ footer p {
     }
     #about {
         flex-direction: column;
-
     }
     .picture {
         width: 50%;
@@ -354,7 +326,6 @@ footer p {
         text-align: center;
         margin-top: 1em;
     }
-
     #services .container {
         flex-direction: column;
     }
@@ -367,7 +338,10 @@ footer p {
     .service__description {
         margin-bottom: 1em;
     }
-
+    .w-100 {
+        max-width: 1905px;
+        height: auto;
+    }
     #services .container::before {
         width: 30%;
         height: 100%;
@@ -376,7 +350,6 @@ footer p {
         left: auto;
         z-index: 0;
     }
-
     #contact .container {
         flex-direction: column;
     }
@@ -391,7 +364,6 @@ footer p {
         right: 0;
         z-index: -1;
     }
-
 }
 @media all and (max-width: 650px) {
     .top-header {
@@ -410,11 +382,20 @@ footer p {
     }
     .top-header h1.name {
         font-size: 40px;
+        padding-bottom: 10px;
     }
     .top-header .nav li {
         flex: 1;
-        padding-block: 1em;
+        padding: 0.5em 0;
         text-align: center;
+    }
+    .nav {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+    .social-links {
+        gap: 75px;
     }
     .picture.left::before,
     .picture.right::before {
@@ -435,11 +416,20 @@ footer p {
         padding-inline: 2em;
         padding-block: 2em;
     }
+    #about,
+    #contact,
+    #gallery,
+    #services {
+        scroll-margin-top: 0;
+    }
     form {
         width: 100%;
     }
     .picture {
         width: 80%;
     }
-
+    footer {
+        display: flex;
+        flex-flow: column-reverse;
+    }
 }
